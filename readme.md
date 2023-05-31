@@ -21,12 +21,12 @@
 
 - clone the project
 ```bash
-git clone https://github.com/raj8888/food_delievey.git
+git clone https://github.com/raj8888/Assignment_86Agency
 ```
 
 - Go to the Repo
 ```bash
-cd food_delievey
+cd 89AGENT_ASSIGNMENT
 ```
 - For Install Modules
 ```bash
@@ -46,7 +46,6 @@ nodemon index.js
 
 `MongoURL`
 
-`seckey`
 
 `port`
 
@@ -56,72 +55,79 @@ nodemon index.js
 ### For Users
 - for user register
 ```http
-POST/api/users/register
+POST/api/users/auth/signup
 ```
 
 - for user login
 ```http
-POST/api/users/login
+POST/api/users/auth/login
 ```
 
-- for create new password
-```http
-PATCH/api/users/:userID/reset
-```
 
 **Authentication required for next all routes**
-
-### For Restaurants
-
-- for getting all Restaurants
-```http
-GET/api/restaurants/
+- Make sure you are passing JWT token from headers
+- Ex.
+```
+headers:{
+    authorization:`bearer ${token}`
+}
 ```
 
-- for getting particular Restaurants
+### For Follow and Unfollow
+
+**:id reffer to the userID**
+
+- for follow User
 ```http
-GET/api/restaurants/:id
+POST/api/users/follow/:id
 ```
 
-- for getting particular Restaurants Menu
+- for unfollow User
 ```http
-GET/api/restaurants/:id/menu
+POST/api/users/unfollow/:id
 ```
 
-- for creating restaurants
+
+### For Posts 
+
+**:id reffer to the postID**
+
+- for create post
 ```http
-POST/api/restaurants/
+POST/api/posts/
 ```
 
-- for creating menu for restaurants
+- for get all post of followed userd
 ```http
-POST/api/restaurants/:id/menu
+GET/api/posts/
 ```
 
-- for delete menu for restaurants
+- for getting particular post
 ```http
-DELETE/api/restaurants/:resid/menu/:menuid
+GET/api/posts/:id
 ```
 
-### For Orders
-
-- for create order
+- for like the post
 ```http
-POST/orders/:resid/:menuid
+POST/api/posts/like/:id
 ```
 
-- for getting particular order details
+- for make comment on the post
 ```http
-GET/orders/:id
+POST/api/posts/comment/:id
 ```
 
-- for change the status of id
+- for Edit the Post
 ```http
-PATCH/orders/:id
+PUT/api/posts/:id
+```
+
+- for Delete the Post
+```http
+DELETE/api/posts/:id
 ```
 
 ## Backend Deployed Link
-[https://rich-plum-butterfly-sari.cyclic.app/](https://rich-plum-butterfly-sari.cyclic.app/)
+[https://alert-dove-culottes.cyclic.app](https://alert-dove-culottes.cyclic.app)
 
-## Video Presantation
-[presantation link](https://drive.google.com/file/d/1N-ZkFwU599jWHKEZnFlV0p36ha1H12q-/view?usp=share_link)
+
