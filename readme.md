@@ -1,4 +1,4 @@
-# Social Media App
+# Social Media App Backend
 
 ## Features:
 
@@ -13,7 +13,7 @@
 
 ## Tech Stack:
 
-**NPM Modules:** Express.js,Mongoose.js,bcrypt,jwt.
+**NPM Modules:** Express.js,Mongoose.js,bcrypt,jwt,dotenv.
 
 **Database:** MonogDB
 
@@ -46,13 +46,11 @@ nodemon index.js
 
 `MongoURL`
 
-
 `port`
 
 ## API Refference
 
-
-### For Users
+### For Users (Signup and Login)
 - for user register
 ```http
 POST/api/users/auth/signup
